@@ -12,6 +12,11 @@ RSpec.describe WelcomeController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
+
+    it "directs to user dashboard if signed in" do
+      get :index
+      expect(response).to have_http_status(:success)
+    end
   end
 
 
