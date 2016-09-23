@@ -8,6 +8,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '85776f2921e4f82879d195a45de2df66caa20768783ed56e260271083dd9a92c3284895adbb127b4e98926db4976b7d70c38e2187c2bdbc55c3306fd06aee391'
 
+  #config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET']#, setup: true
   config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET']#, setup: true
 
   # ==> Mailer Configuration
