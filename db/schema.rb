@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160923022104) do
+ActiveRecord::Schema.define(version: 20160926164954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "charities", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_charities_on_name", unique: true, using: :btree
-  end
 
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
@@ -37,6 +30,20 @@ ActiveRecord::Schema.define(version: 20160923022104) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_identities_on_user_id", using: :btree
+  end
+
+  create_table "signature_requests", force: :cascade do |t|
+    t.integer  "status"
+    t.decimal  "idol_amount"
+    t.decimal  "charity_amount"
+    t.decimal  "birdsign_amount"
+    t.decimal  "total"
+    t.integer  "charity"
+    t.boolean  "show_charity_amount"
+    t.integer  "fan_id"
+    t.integer  "idol_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "users", force: :cascade do |t|
